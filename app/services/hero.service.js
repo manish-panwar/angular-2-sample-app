@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var mock_heroes_1 = require('../mock/mock-heroes');
+var http_1 = require('@angular/http');
 var HeroService = (function () {
-    function HeroService() {
+    function HeroService(http) {
+        this.http = http;
         this.heroesUrl = '/seg/diagnosticinfo';
     }
     HeroService.prototype.getHeroes = function () {
@@ -30,7 +32,7 @@ var HeroService = (function () {
     };
     HeroService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], HeroService);
     return HeroService;
 }());

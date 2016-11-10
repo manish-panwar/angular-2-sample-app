@@ -8,7 +8,7 @@ export class HeroService {
 
     private heroesUrl = '/seg/diagnosticinfo';
 
-    constructor(private http : Http)
+    constructor(private http : Http) {}
 
     // This will return the data synchronously.
     getHeroes() : Promise<Hero[]> {

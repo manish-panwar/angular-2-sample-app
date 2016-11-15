@@ -28,7 +28,10 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
         this.heroService.getDelayedHeroes().then(function (heroes) {
+            console.log(heroes);
             _this.heroes = heroes;
+        }).catch(function (error) {
+            console.log(error);
         });
     };
     HeroesComponent.prototype.gotoDetail = function () {

@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from "@angular/core";
+import {Router} from "@angular/router";
 import {Hero} from "../model/hero";
 import {HeroService} from "../services/hero.service";
 
@@ -34,7 +34,10 @@ export class HeroesComponent implements OnInit {
     getHeroes() : void {
         // HeroService method is invoked asynchronously, on success we will set the values of Heroes.
         this.heroService.getDelayedHeroes().then(heroes => {
+            console.log(heroes);
             this.heroes = heroes;
+        }).catch(error => {
+            console.log(error);
         });
     }
 

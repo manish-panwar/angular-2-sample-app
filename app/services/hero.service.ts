@@ -1,20 +1,21 @@
-import {Injectable} from '@angular/core';
-import {Hero} from '../model/hero';
-import {HEROES} from '../mock/mock-heroes';
-import { Http } from '@angular/http';
+import {Injectable} from "@angular/core";
+import {Hero} from "../model/hero";
+import {Http} from "@angular/http";
+import "rxjs/add/operator/toPromise";
 
 @Injectable()
 export class HeroService {
 
-    private heroesUrl = '/seg/diagnosticinfo';
+    private heroesUrl = '/app/heroes';
 
     constructor(private http : Http) {}
 
     // This will return the data synchronously.
     getHeroes() : Promise<Hero[]> {
-
-
-        return Promise.resolve(HEROES);
+        return this.http.get(this.heroesUrl)
+            .toPromise()
+            .then(response => response.json().data as Hero[])
+            .catch()
     };
 
     // This will return the data asynchronously.

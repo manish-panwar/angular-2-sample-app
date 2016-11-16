@@ -13,6 +13,7 @@ var router_1 = require('@angular/router');
 var heroes_component_1 = require("../components/heroes.component");
 var dashboard_component_1 = require("../components/dashboard.component");
 var hero_details_component_1 = require("../components/hero-details.component");
+var search_heroes_component_1 = require("../components/search-heroes.component");
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
@@ -21,17 +22,21 @@ var AppRoutingModule = (function () {
             imports: [
                 router_1.RouterModule.forRoot([
                     {
+                        path: '',
+                        redirectTo: '/dashboard',
+                        pathMatch: 'full'
+                    },
+                    {
                         path: 'heroes',
                         component: heroes_component_1.HeroesComponent
                     },
                     {
-                        path: 'dashboard',
-                        component: dashboard_component_1.DashboardComponent
+                        path: 'search',
+                        component: search_heroes_component_1.SearchHeroesComponent
                     },
                     {
-                        path: '',
-                        redirectTo: '/dashboard',
-                        pathMatch: 'full'
+                        path: 'dashboard',
+                        component: dashboard_component_1.DashboardComponent
                     },
                     {
                         path: 'detail/:id',

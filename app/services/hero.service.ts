@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {Hero} from "../model/hero";
 import {Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class HeroService {
@@ -15,7 +16,7 @@ export class HeroService {
         return this.http.get(this.heroesUrl)
             .toPromise()
             .then(response => response.json().data as Hero[])
-            .catch()
+            .catch(this.handleError)
     };
 
     // This will return the data asynchronously.
@@ -31,6 +32,13 @@ export class HeroService {
                 hero => hero.id === heroId
             )
         );
+    }
 
+    searchHeroes(term : String) : Observable<Hero[]> {
+        return null;
+    }
+
+    handleError(error : any) : Promise<any> {
+        return Promise.reject(error);
     }
 }

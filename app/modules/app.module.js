@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
-var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
-var app_component_1 = require('../components/app.component');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var app_component_1 = require("../components/app.component");
 var hero_details_component_1 = require("../components/hero-details.component");
 var heroes_component_1 = require("../components/heroes.component");
 var hero_service_1 = require("../services/hero.service");
@@ -21,6 +21,7 @@ var dashboard_component_1 = require("../components/dashboard.component");
 var app_routing_module_1 = require("./app-routing.module");
 var in_memory_data_service_1 = require("../services/in-memory-data.service");
 var search_heroes_component_1 = require("../components/search-heroes.component");
+var search_hero_service_1 = require("../services/search-hero.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +41,7 @@ var AppModule = (function () {
                 search_heroes_component_1.SearchHeroesComponent,
                 dashboard_component_1.DashboardComponent
             ],
-            providers: [hero_service_1.HeroService],
+            providers: [hero_service_1.HeroService, search_hero_service_1.SearchHeroService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

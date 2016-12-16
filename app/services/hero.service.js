@@ -33,9 +33,6 @@ var HeroService = (function () {
     HeroService.prototype.getHero = function (heroId) {
         return this.getHeroes().then(function (heroes) { return heroes.find(function (hero) { return hero.id === heroId; }); });
     };
-    HeroService.prototype.searchHeroes = function (term) {
-        return null;
-    };
     HeroService.prototype.handleError = function (error) {
         return Promise.reject(error);
     };

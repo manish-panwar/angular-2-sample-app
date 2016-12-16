@@ -11,6 +11,7 @@ import {DashboardComponent} from "../components/dashboard.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {InMemoryDataService} from "../services/in-memory-data.service";
 import {SearchHeroesComponent} from "../components/search-heroes.component";
+import {SearchHeroService} from "../services/search-hero.service";
 
 @NgModule({
     imports : [
@@ -27,7 +28,7 @@ import {SearchHeroesComponent} from "../components/search-heroes.component";
         SearchHeroesComponent,
         DashboardComponent
     ],
-    providers : [HeroService],
+    providers : [HeroService, SearchHeroService],
     bootstrap : [AppComponent]
 })
 

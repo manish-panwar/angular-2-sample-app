@@ -2,7 +2,6 @@ import {Injectable} from "@angular/core";
 import {Hero} from "../model/hero";
 import {Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
-import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class HeroService {
@@ -32,10 +31,6 @@ export class HeroService {
                 hero => hero.id === heroId
             )
         );
-    }
-
-    searchHeroes(term : String) : Observable<Hero[]> {
-        return null;
     }
 
     handleError(error : any) : Promise<any> {
